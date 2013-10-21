@@ -5,6 +5,7 @@ var camera = new UvcCam({
 	mode: "photo",
 	output: "./photo/image.jpg",
 	encoding: "jpg",
+	emulateraspicam: "yes",
 	timeout: 0 // take the picture immediately
 });
 
