@@ -1,7 +1,7 @@
-var RaspiCam = require("../lib/raspicam");
+var UvcCam = require("../lib/uvccam");
 
 
-var camera = new RaspiCam({
+var camera = new UvcCam({
 	mode: "photo",
 	output: "./photo/image.jpg",
 	encoding: "jpg",
