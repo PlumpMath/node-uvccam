@@ -1,20 +1,20 @@
-# node-raspicam
+# node-uvccam
 
-A Node.js-based controller module for the Raspberry Pi camera.
+A Node.js-based controller module for webcams, based off of troyth's node-raspicam.
 
 _Note_: This should work well for photo and timelapse, video has yet to be tested but may work as well.
 
 ## To Install
 
-	npm install raspicam
+	npm install uvccam
 
 ## To Use
 
-Require raspicam in your node app, then used the exposed constructor to create a RaspiCam object that you can use to take photos, start a timelapse, or record video.
+Require uvccam in your node app, then used the exposed constructor to create a UvcCam object that you can use to take photos, start a timelapse, or record video.
 
-	var RaspiCam = require("raspicam");
+	var UvcCam = require("uvccam");
 
-	var camera = new RaspiCam({ opts });
+	var camera = new UvcCam({ opts });
 
 	//to take a snapshot, start a timelapse or video recording
 	camera.start( );
@@ -38,12 +38,12 @@ Require raspicam in your node app, then used the exposed constructor to create a
 	});
 
 
-### RaspiCam Constructor
+### UvcCam Constructor
 
-The RaspiCam() constructor creates an object that can then be triggered to take a snapshot or start a timelapse or video recording. The constructor options mirror those offered by the raspistill and raspivideo commands provided by the Raspberry Pi Camera API.
+The UvcCam() constructor creates an object that can then be triggered to take a snapshot or start a timelapse or video recording. The constructor options mirror those offered by the raspistill and raspivideo commands provided by the Raspberry Pi Camera API.
 
 
-### RaspiCam Constructor Options for Photo and Timelapse
+### UvcCam Constructor Options for Photo and Timelapse
 
 #### Required
 
@@ -109,7 +109,7 @@ Note: I've kept these in for completeness, but I'm not sure how they will be use
 
 
 
-### RaspiCam Constructor Options for Video
+### UvcCam Constructor Options for Video
 
 #### Required
 
@@ -173,13 +173,13 @@ Note: I've kept these in for completeness, but I'm not sure how they will be use
 
 
 
-### RaspiCam Object Methods
+### UvcCam Object Methods
 
-#### RaspiCam.start( )
+#### UvcCam.start( )
 
 Depending on the `mode`, this will either take a snapshot ("photo"), start a timelapse ("timelapse") or start a video recording ("video").
 
-You can only call start() once on a RaspiCam object, as the same physical camera cannot do multiple captures at once.
+You can only call start() once on a UvcCam object, as the same physical camera cannot do multiple captures at once.
 
 Returns `false` if any errors, otherwise returns `true`.
 
@@ -190,7 +190,7 @@ Emits the following signals:
 *	`exit` with payload (timestamp) when the capture process exits via timeout
 
 
-#### RaspiCam.stop( )
+#### UvcCam.stop( )
 
 This stops any ongoing camera process.
 
@@ -201,12 +201,12 @@ Emits the following signals:
 *	`stop` with payload (err, timestamp) when the capture process was stopped by a .stop() method call
 
 
-#### RaspiCam.set( opt, value )
+#### UvcCam.set( opt, value )
 
 This is a setter - it sets any option you give it. Opt must be a string (eg. "width").
 
 
-#### RaspiCam.get( opt )
+#### UvcCam.get( opt )
 
 This is a getter - it returns any option you give it. Opt must be a string (eg. "width").
 
