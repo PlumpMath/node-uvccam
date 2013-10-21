@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "homepage": "https://github.com/provolot/node-uvccam",
   "author": {
-    "name": "Dan Taeyoung <provolot@gmail.com">.
+    "name": "Dan Taeyoung <provolot@gmail.com>",
     "email": "provolot@gmail.com"
   },
   "keywords": [
@@ -28,5 +28,6 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-  },
+    "lodash": "*"
+  }
 }
