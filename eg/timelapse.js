@@ -1,7 +1,8 @@
-var RaspiCam = require("../lib/raspicam");
+var UvcCam = require("../lib/uvccam");
 
 
-var camera = new RaspiCam({
+var camera = new UvcCam({
+	emulateraspicam: "yes",
 	mode: "timelapse",
 	output: "./timelapse/image_%06d.jpg", // image_000001.jpg, image_000002.jpg,...
 	encoding: "jpg",
