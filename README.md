@@ -5,7 +5,7 @@ A Node.js-based controller module for webcams, based off of troyth's node-raspic
 _Note_: This should work well for photo and timelapse, video has yet to be tested but may work as well.
 
 
-### below is copy-pasted from node-raspicam; many functions do not yet work.
+### NOTE 131021 below is copy-pasted from node-raspicam; many functions do not yet work.
 
 
 ## To Install
