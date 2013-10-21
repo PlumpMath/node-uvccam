@@ -3,9 +3,11 @@ var UvcCam = require("../lib/uvccam");
 
 var camera = new UvcCam({
 	mode: "photo",
+	emulateraspicam: "yes",
+	width: "1280",
+	height: "800",
 	output: "./photo/image.jpg",
 	encoding: "jpg",
-	emulateraspicam: "yes",
 	timeout: 0 // take the picture immediately
 });
 
